@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+	<meta charset = 'UTF-8'>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<title>LiMingyangProjC</title>
+</head>
+
+<body onload = 'main()'>
+	<h3 style="text-align:center; font-family:Comic Sans MS;">ProjC - Mingyang Li</h3>
+
+	<div>
+		<canvas id = 'webgl'>
+			please change your browser which supports webgl
+		</canvas>
+	</div>
+	<p style="text-align:center;"><strong>Please press H to get help!</strong></p>  
+
+	<div class="headLight" style="text-align:center">
+		<button type="button" onclick="turnONHeadLight()" style="background-color: #D3D3D3; border: lightsolid; color: black; font-family:Cursive;
+    															 height: 40px;
+																 width: 180px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 20px;
+															     margin: 4px 1px 1px 4px;
+															     cursor: pointer;
+																 border-radius: 8px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnONHeadLight</button>
+		<button type="button" onclick="turnOFFHeadLight()" style="background-color: #D3D3D3; border: lightsolid; color: black; font-family:Cursive;
+    															 height: 40px;
+																 width: 180px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 20px;
+															     margin: 4px 1px 1px 4px;
+															     cursor: pointer;
+																 border-radius: 8px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFHeadLight</button>
+	<br>
+	<button type="button" onclick="headAmbOn()" 
+	  													  style="background-color: #272b26; border: lightsolid; 
+	  													  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOnAmbient</button>
+	<button type="button" onclick="headAmbOff()" 
+														  style="background-color: #272b26; border: lightsolid; 
+														   		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFAmbient</button>
+
+	<button type="button" onclick="headDifOn()" 
+	   													  style="background-color: #272b26; border: lightsolid; 
+	   													  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOnDiffuse</button>
+	<button type="button" onclick="headDifOff()" 
+														  style="background-color: #272b26; border: lightsolid; 
+														  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFDiffuse</button>
+
+	<button type="button" onclick="headSpeOn()" 
+	   													  style="background-color: #272b26; border: lightsolid; 
+	   													  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOnSpecular</button>
+	<button type="button" onclick="headSpeOff()" 
+														  style="background-color: #272b26; border: lightsolid;
+														  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFSpecular</button>
+
+
+
+		<br>
+		<button type="button" onclick="turnONUserLight()" style="background-color: #D3D3D3; border: lightsolid; color: black; font-family:Cursive;
+    															 height: 40px;
+																 width: 180px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 20px;
+															     margin: 4px 1px 1px 4px;
+															     cursor: pointer;
+																 border-radius: 8px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnONUserLight</button>
+		<button type="button" onclick="turnOFFUserLight()" style="background-color: #D3D3D3; border: lightsolid; color: black; font-family:Cursive;
+    															 height: 40px;
+																 width: 180px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 20px;
+															     margin: 4px 1px 1px 4px;
+															     cursor: pointer;
+																 border-radius: 8px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFUserLight</button>
+
+	<br>
+	<button type="button" onclick="userAmbOn()" 
+	  													  style="background-color: #272b26; border: lightsolid; 
+	  													  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOnAmbient</button>
+	<button type="button" onclick="userAmbOff()" 
+														  style="background-color: #272b26; border: lightsolid; 
+														   		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFAmbient</button>
+
+	<button type="button" onclick="userDifOn()" 
+	   													  style="background-color: #272b26; border: lightsolid; 
+	   													  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOnDiffuse</button>
+	<button type="button" onclick="userDifOff()" 
+														  style="background-color: #272b26; border: lightsolid; 
+														  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFDiffuse</button>
+
+	<button type="button" onclick="userSpeOn()" 
+	   													  style="background-color: #272b26; border: lightsolid; 
+	   													  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOnSpecular</button>
+	<button type="button" onclick="userSpeOff()" 
+														  style="background-color: #272b26; border: lightsolid;
+														  		 color: white; font-family:Helvetica;
+    															 height: 30px;
+																 width: 150px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 16px;
+															     margin: 1px 1px 1px 1px;
+															     cursor: pointer;
+																 border-radius: 28px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">turnOFFSpecular</button>
+
+
+		<br>
+	</div>
+
+	<div class="userLight" style="text-align:center">
+		<p>In this part, the range of each blank named R, G, B is from 0.0 to 1.0,<br>the range of each blank named X, Y, Z is from -inf to inf</p>
+		<p>UserLight Ambient</p>
+		R: <input type="number" name="set" value="">
+		G: <input type="number" name="set" value="">
+		B: <input type="number" name="set" value="">
+		<br>
+		<p>UserLight Diffuse</p>
+		R: <input type="number" name="set" value="">
+		G: <input type="number" name="set" value="">
+		B: <input type="number" name="set" value="">
+		<br>
+		<p>UserLight Specular</p>
+		R: <input type="number" name="set" value="">
+		G: <input type="number" name="set" value="">
+		B: <input type="number" name="set" value="">
+		<br>
+		<p>Position</p>
+		X: <input type="number" name="set" value="">
+		Y: <input type="number" name="set" value="">
+		Z: <input type="number" name="set" value="">
+		<br>
+		<br>
+		<button type="button" onclick="upDateRGB()" style="background-color: #D3D3D3; border: lightsolid; color: black; font-family:Cursive;
+    															 height: 40px;
+																 width: 180px;
+    															 text-align: center;
+																 vertical-align: top;
+															     text-decoration: none;
+															     display: inline-block;
+															     font-size: 20px;
+															     margin: 4px 1px 1px 4px;
+															     cursor: pointer;
+																 border-radius: 8px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 6px 0 rgba(0,0,0,0.19)">Submit</button>
+	</div>
+
+	<script type="text/javascript" src = 'lib/cuon-matrix-mod.js'></script>
+	<script type="text/javascript" src = 'lib/cuon-matrix-quat.js'></script>
+	<script type="text/javascript" src = 'lib/cuon-matrix.js'></script>
+	<script type="text/javascript" src = 'lib/cuon-utils.js'></script>
+	<script type="text/javascript" src = 'lib/webgl-debug.js'></script>
+	<script type="text/javascript" src = 'lib/webgl-utils.js'></script>
+	<script type='text/javascript' src = 'lights-JT.js'></script>
+	<script type="text/javascript" src = 'materials_Ayerdi.js'></script>
+	<script type="text/javascript" src = 'LiMingyang_ProjC.js'></script>
+</body>
+
+</html>

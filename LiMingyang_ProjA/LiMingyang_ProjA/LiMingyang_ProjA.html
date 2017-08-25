@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LiMingyangProjA</title>
+    <style type="text/css">
+	.container{
+			margin:0 auto;
+			width:500px;
+		  }
+	#scene{
+      			border:1px solid black;
+              }
+    </style>
+  </head>
+
+  <body onload="main()" onkeyup="keyHelp(event)">
+    <h3 style="text-align:center; font-family:Comic Sans MS;">ProjA - Mingyang Li</h3>
+    <div class="container">
+    <canvas id="webgl" width="500" height="500">
+    Please use a browser that supports "canvas"
+    </canvas>
+    </div>
+    <p style="text-align:center;"><strong>Please press H to get help!</strong></p>    
+    <p style="text-align:center;">
+      <button type="button" onclick="moreCCW()">LESS CLOCKWISE</button>
+      <button type="button" onclick="lessCCW()">MORE CLOCKWISE</button>
+      <button type="button" onclick="pause_restart()">PAUSE/RESTART</button>
+      <button type="button" onclick="speedUP()">SPEEDUP</button>
+      <button type="button" onclick="speedDOWN()">SPEEDDOWN</button>
+      <button type="button" onClick='clearDrag()'>RESET</button>
+    </p>
+    <div style="text-align:center;" id= CurAngleDisplay></div>
+    <div style="text-align:center;" id= CurpDisplay></div>
+    <div style="text-align:center;" id='Mouse'> Mouse Drag totals </div>
+    <p style="text-align:center;"><button style="text-align:center;" type="button" onClick='clearDrag()'>Clear</button></p>
+    <div style="text-align:center;" id='Mouse' style="text-align:center;"></div>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-mod.js"></script>
+    <script src="LiMingyang_ProjA.js"></script>
+  </body>
+</html>
